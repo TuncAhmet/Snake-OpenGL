@@ -1,0 +1,3 @@
+D:/workspace/cpp/openGL/Snake-OpenGL/build/CMakeFiles/Snake.dir
+D:/workspace/cpp/openGL/Snake-OpenGL/build/CMakeFiles/edit_cache.dir
+D:/workspace/cpp/openGL/Snake-OpenGL/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake",
+      "type": "shell",
+      "command": "cmake",
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      },
+      "args": ["-G", "MinGW Makefiles", "${workspaceFolder}"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": ["mkdirBuild"]
+    },
+    {
+      "label": "mkdirBuild",
+      "type": "shell",
+      "command": "mkdir",
+      "options": {
+        "cwd": "${workspaceFolder}/"
+      },
+      "args": ["build"],
+      "dependsOn": ["rmdir"]
+    },
+    {
+      "label": "rmdir",
+      "type": "shell",
+      "command": "rm",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "args": ["-r", "-fo", "build"]
+    },
+    {
+      "label": "Make",
+      "type": "shell",
+      "command": "make",
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      },
+      "args": ["-l"],
+      "problemMatcher": []
+    }
+  ]
+}
