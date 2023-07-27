@@ -27,6 +27,14 @@ void Square::setRandomPosition()
     m_Position.x = x;
     m_Position.y = y;
 }
+void Square::setXPosition(float x)
+{
+    m_Position.x += x;
+}
+void Square::setYPosition(float y)
+{
+    m_Position.y += y;
+}
 glm::vec4 Square::getColor()
 {
     return m_Color;

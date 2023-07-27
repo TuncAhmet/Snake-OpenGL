@@ -18,6 +18,8 @@ public:
     Square(float x, float y, float length);
     glm::vec3 getPosition();
     void setRandomPosition();
+    void setXPosition(float x);
+    void setYPosition(float y);
     glm::vec4 getColor();
     DIRECTION getDirection();
     void setDirection(DIRECTION dir);

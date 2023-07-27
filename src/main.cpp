@@ -156,6 +156,8 @@ void drawFood(ShaderProgram &program)
 
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
+    Square *head = snakeList[0];
+    Square::DIRECTION headDir = head->getDirection();
     if (key == GLFW_KEY_ESCAPE)
         glfwTerminate();
     if (action == GLFW_PRESS)
@@ -166,19 +168,23 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 
             if (key == GLFW_KEY_LEFT)
             {
-                first->setDirection(Square::DIR_LEFT);
+                if (headDir != Square::DIR_RIGHT)
+                    first->setDirection(Square::DIR_LEFT);
             }
             if (key == GLFW_KEY_RIGHT)
             {
-                first->setDirection(Square::DIR_RIGHT);
+                if (headDir != Square::DIR_LEFT)
+                    first->setDirection(Square::DIR_RIGHT);
             }
             if (key == GLFW_KEY_UP)
             {
-                first->setDirection(Square::DIR_UP);
+                if (headDir != Square::DIR_DOWN)
+                    first->setDirection(Square::DIR_UP);
             }
             if (key == GLFW_KEY_DOWN)
             {
-                first->setDirection(Square::DIR_DOWN);
+                if (headDir != Square::DIR_UP)
+                    first->setDirection(Square::DIR_DOWN);
             }
         }
     }
